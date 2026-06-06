@@ -1,8 +1,17 @@
 import pandas as pd
 from train import get_cluster
 from evaluate import get_score
+import os
+import sys
 
-df = pd.read_csv(r"C:\Users\sailj\OneDrive\文档\GitHub\Data-Driven Customer Segmentation\dataset\Online Retail.csv")
+csv_path = os.path.join(
+    os.path.dirname(__file__),
+    "..",
+    "dataset",
+    "Online Retail.csv"
+)
+
+df = pd.read_csv(csv_path)
 
 model , X = get_cluster(df) 
 
